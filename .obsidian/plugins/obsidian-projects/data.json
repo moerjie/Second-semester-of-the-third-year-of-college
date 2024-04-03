@@ -1,0 +1,48 @@
+{
+  "version": 2,
+  "projects": [
+    {
+      "fieldConfig": {},
+      "defaultName": "",
+      "templates": [],
+      "excludedNotes": [],
+      "isDefault": false,
+      "dataSource": {
+        "kind": "folder",
+        "config": {
+          "path": "",
+          "recursive": false
+        }
+      },
+      "newNotesFolder": "",
+      "views": [
+        {
+          "config": {},
+          "filter": {
+            "conditions": []
+          },
+          "colors": {
+            "conditions": []
+          },
+          "sort": {
+            "criteria": []
+          },
+          "id": "182400b1-5571-432a-834f-00e8cbd97d51",
+          "name": "表格",
+          "type": "table"
+        }
+      ],
+      "id": "75f01ab6-8d56-439c-ad7c-79b8570dd507",
+      "name": "未命名项目"
+    }
+  ],
+  "archives": [],
+  "preferences": {
+    "projectSizeLimit": 1000,
+    "frontmatter": {
+      "quoteStrings": "PLAIN"
+    },
+    "commands": [],
+    "linkBehavior": "open-editor"
+  }
+}

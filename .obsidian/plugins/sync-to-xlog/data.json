@@ -1,0 +1,14 @@
+{
+  "enable": true,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhmY2E5MzZkM2JiZTgyYWZmY2JlYmM5Mzg2ZjFiM2YyZDRmMzkxMGEyIiwiaWF0IjoxNzAyNDUzMjUyLCJleHAiOjIwMTc4MTMyNTJ9.8xr4ONLSFEPccAHIE847wfrDsXkzj_ZSzBLWMEW2nBY",
+  "charactorID": 60147,
+  "autoUpload": true,
+  "debugger": false,
+  "isMultiCharactor": false,
+  "charactorList": [
+    {
+      "name": "moerjie-2566(60147)",
+      "value": 60147
+    }
+  ]
+}
