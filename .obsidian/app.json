@@ -1,7 +1,5 @@
 {
   "showLineNumber": true,
-  "vimMode": true,
-  "rightToLeft": false,
-  "newFileLocation": "current",
-  "attachmentFolderPath": "/"
+  "vimMode": false,
+  "autoConvertHtml": false
 }

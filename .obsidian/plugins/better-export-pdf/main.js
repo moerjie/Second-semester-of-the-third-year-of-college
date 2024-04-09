@@ -4242,15 +4242,16 @@ __export(main_exports, {
   default: () => BetterExportPdfPlugin
 });
 module.exports = __toCommonJS(main_exports);
-var import_obsidian4 = require("obsidian");
+var import_obsidian5 = require("obsidian");
 
 // src/modal.ts
-var import_obsidian2 = require("obsidian");
+var import_obsidian3 = require("obsidian");
 
 // src/render.ts
-var import_obsidian = require("obsidian");
+var import_obsidian2 = require("obsidian");
 
 // src/utils.ts
+var import_obsidian = require("obsidian");
 var TreeNode = class {
   constructor(key, title, level) {
     this.children = [];
@@ -4323,6 +4324,26 @@ function waitFor(cond, timeout = 0) {
     };
     poll();
   });
+}
+var px2mm = (px2) => {
+  return Math.round(px2 * 0.26458333333719);
+};
+var mm2px = (mm) => {
+  return Math.round(mm * 3.779527559);
+};
+function traverseFolder(path) {
+  if (path instanceof import_obsidian.TFile) {
+    if (path.extension == "md") {
+      return [path];
+    } else {
+      return [];
+    }
+  }
+  const arr = [];
+  for (const item of path.children) {
+    arr.push(...traverseFolder(item));
+  }
+  return arr;
 }
 
 // src/render.ts
@@ -4423,10 +4444,10 @@ async function renderMarkdown(app, file, config, extra) {
     const leaf = ws.getLeaf();
     await leaf.openFile(file);
   }
-  const view = ws.getActiveViewOfType(import_obsidian.MarkdownView);
+  const view = ws.getActiveViewOfType(import_obsidian2.MarkdownView);
   const data = (_e = (_c = view == null ? void 0 : view.data) != null ? _c : (_b = ws == null ? void 0 : ws.getActiveFileView()) == null ? void 0 : _b.data) != null ? _e : (_d = ws.activeEditor) == null ? void 0 : _d.data;
   if (!data) {
-    new import_obsidian.Notice("data is empty!");
+    new import_obsidian2.Notice("data is empty!");
   }
   const frontMatter = getFrontMatter(app, file);
   const cssclasses = [];
@@ -4439,7 +4460,7 @@ async function renderMarkdown(app, file, config, extra) {
       }
     }
   }
-  const comp = new import_obsidian.Component();
+  const comp = new import_obsidian2.Component();
   comp.load();
   const promises = [];
   const printEl = document.body.createDiv("print");
@@ -4462,8 +4483,8 @@ async function renderMarkdown(app, file, config, extra) {
     lines[idx] = `<span id="^${key}" class="blockid"></span>
 ` + lines[idx];
   });
-  await import_obsidian.MarkdownRenderer.render(app, lines.join("\n"), viewEl, file.path, comp);
-  import_obsidian.MarkdownRenderer.postProcess(app, {
+  await import_obsidian2.MarkdownRenderer.render(app, lines.join("\n"), viewEl, file.path, comp);
+  import_obsidian2.MarkdownRenderer.postProcess(app, {
     docId: generateDocId(16),
     sourcePath: file.path,
     frontmatter: {},
@@ -20357,19 +20378,26 @@ function setMetadata(pdfDoc, { title, author, keywords, subject, creator, create
   pdfDoc.setModificationDate(new Date(updated_at != null ? updated_at : /* @__PURE__ */ new Date()));
 }
 async function exportToPDF(outputFile, config, w, doc, frontMatter) {
-  var _a, _b, _c, _d, _e, _f, _g;
+  var _a, _b, _c, _d, _e, _f, _g, _h, _i;
+  let pageSize = config["pageSise"];
+  if (config["pageSise"] == "Custom" && config["pageWidth"] && config["pageHeight"]) {
+    pageSize = {
+      width: parseFloat((_a = config["pageWidth"]) != null ? _a : "0") / 25.4,
+      height: parseFloat((_b = config["pageHeight"]) != null ? _b : "0") / 25.4
+    };
+  }
   const printOptions = {
     landscape: config == null ? void 0 : config["landscape"],
     printBackground: config == null ? void 0 : config["printBackground"],
     generateTaggedPDF: config == null ? void 0 : config["generateTaggedPDF"],
-    pageSize: config["pageSise"],
+    pageSize,
     scale: config["scale"] / 100,
     margins: {
       marginType: "default"
     },
     displayHeaderFooter: config["displayHeader"] || config["displayFooter"],
-    headerTemplate: config["displayHeader"] ? (_a = frontMatter == null ? void 0 : frontMatter["headerTemplate"]) != null ? _a : config["headerTemplate"] : "<span></span>",
-    footerTemplate: config["displayFooter"] ? (_b = frontMatter == null ? void 0 : frontMatter["footerTemplate"]) != null ? _b : config["footerTemplate"] : "<span></span>"
+    headerTemplate: config["displayHeader"] ? (_c = frontMatter == null ? void 0 : frontMatter["headerTemplate"]) != null ? _c : config["headerTemplate"] : "<span></span>",
+    footerTemplate: config["displayFooter"] ? (_d = frontMatter == null ? void 0 : frontMatter["footerTemplate"]) != null ? _d : config["footerTemplate"] : "<span></span>"
   };
   if (config.marginType == "0") {
     printOptions["margins"] = {
@@ -20394,10 +20422,10 @@ async function exportToPDF(outputFile, config, w, doc, frontMatter) {
   } else if (config.marginType == "3") {
     printOptions["margins"] = {
       marginType: "custom",
-      top: parseFloat((_c = config["marginTop"]) != null ? _c : "0") / 25.4,
-      bottom: parseFloat((_d = config["marginBottom"]) != null ? _d : "0") / 25.4,
-      left: parseFloat((_e = config["marginLeft"]) != null ? _e : "0") / 25.4,
-      right: parseFloat((_f = config["marginRight"]) != null ? _f : "0") / 25.4
+      top: parseFloat((_e = config["marginTop"]) != null ? _e : "0") / 25.4,
+      bottom: parseFloat((_f = config["marginBottom"]) != null ? _f : "0") / 25.4,
+      left: parseFloat((_g = config["marginLeft"]) != null ? _g : "0") / 25.4,
+      right: parseFloat((_h = config["marginRight"]) != null ? _h : "0") / 25.4
     };
   }
   try {
@@ -20406,7 +20434,7 @@ async function exportToPDF(outputFile, config, w, doc, frontMatter) {
       headings: getHeadingTree(doc),
       frontMatter,
       displayMetadata: config == null ? void 0 : config.displayMetadata,
-      maxLevel: parseInt((_g = config == null ? void 0 : config.maxLevel) != null ? _g : "6")
+      maxLevel: parseInt((_i = config == null ? void 0 : config.maxLevel) != null ? _i : "6")
     });
     await fs.writeFile(outputFile, data);
     if (config.open) {
@@ -20432,6 +20460,21 @@ async function getOutputFile(filename) {
   return result.filePath;
 }
 
+// src/constant.ts
+var PageSize = {
+  A0: [841, 1189],
+  A1: [594, 841],
+  A2: [420, 594],
+  A3: [297, 420],
+  A4: [210, 297],
+  A5: [148, 210],
+  A6: [105, 148],
+  Legal: [216, 356],
+  Letter: [216, 279],
+  Tabloid: [279, 432],
+  Ledger: [432, 279]
+};
+
 // src/modal.ts
 function fullWidthButton(button) {
   button.buttonEl.setAttribute("style", `margin: "0 auto"; width: -webkit-fill-available`);
@@ -20439,7 +20482,7 @@ function fullWidthButton(button) {
 function setInputWidth(inputEl) {
   inputEl.setAttribute("style", `width: 100px;`);
 }
-var ExportConfigModal = class extends import_obsidian2.Modal {
+var ExportConfigModal = class extends import_obsidian3.Modal {
   constructor(plugin, file, config) {
     var _a, _b, _c, _d, _e;
     super(plugin.app);
@@ -20470,12 +20513,11 @@ var ExportConfigModal = class extends import_obsidian2.Modal {
     var _a, _b;
     const app = this.plugin.app;
     const docs = [];
-    if (this.file instanceof import_obsidian2.TFolder) {
-      for (const file of this.file.children) {
-        if (file instanceof import_obsidian2.TFile && file.extension == "md") {
-          docs.push(await renderMarkdown(app, file, this.config));
-          Object.assign(this.frontMatter, getFrontMatter(app, file));
-        }
+    if (this.file instanceof import_obsidian3.TFolder) {
+      const files = traverseFolder(this.file);
+      for (const file of files) {
+        docs.push(await renderMarkdown(app, file, this.config));
+        Object.assign(this.frontMatter, getFrontMatter(app, file));
       }
     } else {
       const doc0 = await renderMarkdown(app, this.file, this.config);
@@ -20495,7 +20537,7 @@ var ExportConfigModal = class extends import_obsidian2.Modal {
             file: this.app.metadataCache.getFirstLinkpathDest(link, this.file.path),
             id
           };
-        }).filter((item) => item.file instanceof import_obsidian2.TFile)) != null ? _b : [];
+        }).filter((item) => item.file instanceof import_obsidian3.TFile)) != null ? _b : [];
         for (const item of files) {
           docs.push(await renderMarkdown(app, item.file, this.config, item));
           Object.assign(this.frontMatter, getFrontMatter(app, item.file));
@@ -20527,6 +20569,38 @@ var ExportConfigModal = class extends import_obsidian2.Modal {
     }
     fixDoc(this.doc, this.title);
     return this.doc;
+  }
+  calcPageSize(element, config) {
+    var _a, _b, _c, _d;
+    const conf = config != null ? config : this.config;
+    const el = element != null ? element : this.previewDiv;
+    console.log(conf);
+    const width = (_d = (_b = (_a = PageSize) == null ? void 0 : _a[conf["pageSise"]]) == null ? void 0 : _b[0]) != null ? _d : parseFloat((_c = conf["pageWidth"]) != null ? _c : "210");
+    const scale2 = Math.floor(mm2px(width) / el.offsetWidth * 100) / 100;
+    this.preview.style.transform = `scale(${1 / scale2},${1 / scale2})`;
+    this.preview.style.width = `calc(${scale2} * 100%)`;
+    this.preview.style.height = `calc(${scale2} * 100%)`;
+  }
+  async calcWebviewSize() {
+    await sleep(500);
+    const [width, height] = await this.preview.executeJavaScript(
+      "[document.body.offsetWidth, document.body.offsetHeight]"
+    );
+    const sizeEl = document.querySelector("#print-size");
+    if (sizeEl) {
+      sizeEl.innerHTML = `${width}\xD7${height}px
+${px2mm(width)}\xD7${px2mm(height)}mm`;
+    }
+  }
+  async togglePrintSize() {
+    const sizeEl = document.querySelector("#print-size");
+    if (sizeEl) {
+      if (this.config["pageSise"] == "Custom") {
+        sizeEl.style.visibility = "visible";
+      } else {
+        sizeEl.style.visibility = "hidden";
+      }
+    }
   }
   async onOpen() {
     var _a, _b, _c;
@@ -20560,12 +20634,25 @@ var ExportConfigModal = class extends import_obsidian2.Modal {
         getPatchStyle().forEach(async (css) => {
           await this.preview.insertCSS(css);
         });
+        this.calcWebviewSize();
       });
     };
-    const previewDiv = wrapper.createDiv({ attr: { style: "flex:auto;" } }, async (e) => {
-      e.empty();
-      await appendWebview(e);
+    const previewDiv = wrapper.createDiv({ attr: { style: "flex:auto; position:relative;" } }, async (el) => {
+      el.empty();
+      const resizeObserver = new ResizeObserver(() => {
+        this.calcPageSize(el);
+      });
+      resizeObserver.observe(el);
+      await appendWebview(el);
     });
+    this.previewDiv = previewDiv;
+    previewDiv.createDiv({
+      attr: {
+        id: "print-size",
+        style: "position:absolute;right:8px;top:8px;z-index:99;font-size:0.75rem;white-space:pre-wrap;text-align:right;visibility:hidden;"
+      }
+    });
+    this.togglePrintSize();
     const contentEl = wrapper.createDiv();
     contentEl.setAttribute("style", "width:320px;margin-left:16px;");
     contentEl.addEventListener("keyup", (event) => {
@@ -20590,22 +20677,22 @@ var ExportConfigModal = class extends import_obsidian2.Modal {
           this.close();
         }
       } else {
-        new import_obsidian2.Notice("dom not ready");
+        new import_obsidian3.Notice("dom not ready");
       }
     };
-    new import_obsidian2.Setting(contentEl).setHeading().addButton((button) => {
+    new import_obsidian3.Setting(contentEl).setHeading().addButton((button) => {
       button.setButtonText("Export").onClick(handleExport);
       button.setCta();
       fullWidthButton(button);
     });
-    new import_obsidian2.Setting(contentEl).setHeading().addButton((button) => {
+    new import_obsidian3.Setting(contentEl).setHeading().addButton((button) => {
       button.setButtonText("Refresh").onClick(async () => {
         previewDiv.empty();
         await appendWebview(previewDiv);
       });
       fullWidthButton(button);
     });
-    const debugEl = new import_obsidian2.Setting(contentEl).setHeading().addButton((button) => {
+    const debugEl = new import_obsidian3.Setting(contentEl).setHeading().addButton((button) => {
       button.setButtonText("Debug").onClick(async () => {
         var _a2;
         (_a2 = this.preview) == null ? void 0 : _a2.openDevTools();
@@ -20615,7 +20702,7 @@ var ExportConfigModal = class extends import_obsidian2.Modal {
     debugEl.settingEl.hidden = !this.plugin.settings.debug;
   }
   generateForm(contentEl) {
-    new import_obsidian2.Setting(contentEl).setName("Include file name as title").addToggle(
+    new import_obsidian3.Setting(contentEl).setName("Include file name as title").addToggle(
       (toggle) => toggle.setTooltip("Include file name as title").setValue(this.config["showTitle"]).onChange(async (value) => {
         var _a;
         this.config["showTitle"] = value;
@@ -20638,14 +20725,45 @@ var ExportConfigModal = class extends import_obsidian2.Modal {
       "Legal",
       "Letter",
       "Tabloid",
-      "Ledger"
+      "Ledger",
+      "Custom"
     ];
-    new import_obsidian2.Setting(contentEl).setName("Page size").addDropdown((dropdown) => {
+    new import_obsidian3.Setting(contentEl).setName("Page size").addDropdown((dropdown) => {
       dropdown.addOptions(Object.fromEntries(pageSizes.map((size) => [size, size]))).setValue(this.config.pageSise).onChange(async (value) => {
         this.config["pageSise"] = value;
+        if (value == "Custom") {
+          sizeEl.settingEl.hidden = false;
+        } else {
+          sizeEl.settingEl.hidden = true;
+        }
+        this.togglePrintSize();
+        this.calcPageSize();
+        await this.calcWebviewSize();
       });
     });
-    new import_obsidian2.Setting(contentEl).setName("Margin").setDesc("The unit is millimeters.").addDropdown((dropdown) => {
+    const sizeEl = new import_obsidian3.Setting(contentEl).setName("Width/Height").addText((text) => {
+      setInputWidth(text.inputEl);
+      text.setPlaceholder("width").setValue(this.config["pageWidth"]).onChange(
+        (0, import_obsidian3.debounce)(
+          async (value) => {
+            this.config["pageWidth"] = value;
+            this.calcPageSize();
+            await this.calcWebviewSize();
+          },
+          500,
+          true
+        )
+      );
+    }).addText((text) => {
+      setInputWidth(text.inputEl);
+      text.setPlaceholder("height").setValue(this.config["pageHeight"]).onChange((value) => {
+        this.config["pageHeight"] = value;
+      });
+    });
+    if (this.config["pageSise"] != "Custom") {
+      sizeEl.settingEl.hidden = true;
+    }
+    new import_obsidian3.Setting(contentEl).setName("Margin").setDesc("The unit is millimeters.").addDropdown((dropdown) => {
       dropdown.addOption("0", "None").addOption("1", "Default").addOption("2", "Small").addOption("3", "Custom").setValue(this.config["marginType"]).onChange(async (value) => {
         this.config["marginType"] = value;
         if (value == "3") {
@@ -20657,7 +20775,7 @@ var ExportConfigModal = class extends import_obsidian2.Modal {
         }
       });
     });
-    const topEl = new import_obsidian2.Setting(contentEl).setName("Top/Bottom").addText((text) => {
+    const topEl = new import_obsidian3.Setting(contentEl).setName("Top/Bottom").addText((text) => {
       setInputWidth(text.inputEl);
       text.setPlaceholder("margin top").setValue(this.config["marginTop"]).onChange((value) => {
         this.config["marginTop"] = value;
@@ -20669,7 +20787,7 @@ var ExportConfigModal = class extends import_obsidian2.Modal {
       });
     });
     topEl.settingEl.hidden = this.config["marginType"] != "3";
-    const btmEl = new import_obsidian2.Setting(contentEl).setName("Left/Right").addText((text) => {
+    const btmEl = new import_obsidian3.Setting(contentEl).setName("Left/Right").addText((text) => {
       setInputWidth(text.inputEl);
       text.setPlaceholder("margin left").setValue(this.config["marginLeft"]).onChange((value) => {
         this.config["marginLeft"] = value;
@@ -20681,28 +20799,28 @@ var ExportConfigModal = class extends import_obsidian2.Modal {
       });
     });
     btmEl.settingEl.hidden = this.config["marginType"] != "3";
-    new import_obsidian2.Setting(contentEl).setName("Downscale precent").addSlider((slider) => {
+    new import_obsidian3.Setting(contentEl).setName("Downscale precent").addSlider((slider) => {
       slider.setLimits(0, 100, 1).setValue(this.config["scale"]).onChange(async (value) => {
         this.config["scale"] = value;
         slider.showTooltip();
       });
     });
-    new import_obsidian2.Setting(contentEl).setName("Landscape").addToggle(
+    new import_obsidian3.Setting(contentEl).setName("Landscape").addToggle(
       (toggle) => toggle.setTooltip("landscape").setValue(this.config["landscape"]).onChange(async (value) => {
         this.config["landscape"] = value;
       })
     );
-    new import_obsidian2.Setting(contentEl).setName("Display header").addToggle(
+    new import_obsidian3.Setting(contentEl).setName("Display header").addToggle(
       (toggle) => toggle.setTooltip("Display header").setValue(this.config["displayHeader"]).onChange(async (value) => {
         this.config["displayHeader"] = value;
       })
     );
-    new import_obsidian2.Setting(contentEl).setName("Display footer").addToggle(
+    new import_obsidian3.Setting(contentEl).setName("Display footer").addToggle(
       (toggle) => toggle.setTooltip("Display footer").setValue(this.config["displayFooter"]).onChange(async (value) => {
         this.config["displayFooter"] = value;
       })
     );
-    new import_obsidian2.Setting(contentEl).setName("Open after export").addToggle(
+    new import_obsidian3.Setting(contentEl).setName("Open after export").addToggle(
       (toggle) => toggle.setTooltip("Open the exported file after exporting.").setValue(this.config["open"]).onChange(async (value) => {
         this.config["open"] = value;
       })
@@ -20715,7 +20833,7 @@ var ExportConfigModal = class extends import_obsidian2.Modal {
 };
 
 // src/setting.ts
-var import_obsidian3 = require("obsidian");
+var import_obsidian4 = require("obsidian");
 function setAttributes(element, attributes) {
   for (const key in attributes) {
     element.setAttribute(key, attributes[key]);
@@ -20730,7 +20848,7 @@ var renderBuyMeACoffeeBadge = (contentEl, width = 175) => {
   imgEl.alt = "Buy me a coffee";
   imgEl.width = width;
 };
-var ConfigSettingTab = class extends import_obsidian3.PluginSettingTab {
+var ConfigSettingTab = class extends import_obsidian4.PluginSettingTab {
   constructor(app, plugin) {
     super(app, plugin);
     this.plugin = plugin;
@@ -20742,57 +20860,57 @@ var ConfigSettingTab = class extends import_obsidian3.PluginSettingTab {
     supportDesc.createDiv({
       text: "Support the continued development of this plugin."
     });
-    new import_obsidian3.Setting(containerEl).setDesc(supportDesc);
+    new import_obsidian4.Setting(containerEl).setDesc(supportDesc);
     renderBuyMeACoffeeBadge(containerEl);
-    new import_obsidian3.Setting(containerEl).setName("Add file name as title").addToggle(
+    new import_obsidian4.Setting(containerEl).setName("Add file name as title").addToggle(
       (toggle) => toggle.setTooltip("Add filename as title").setValue(this.plugin.settings.showTitle).onChange(async (value) => {
         this.plugin.settings.showTitle = value;
         this.plugin.saveSettings();
       })
     );
-    new import_obsidian3.Setting(containerEl).setName("Display header").addToggle(
+    new import_obsidian4.Setting(containerEl).setName("Display header").addToggle(
       (toggle) => toggle.setTooltip("Display header").setValue(this.plugin.settings.displayHeader).onChange(async (value) => {
         this.plugin.settings.displayHeader = value;
         this.plugin.saveSettings();
       })
     );
-    new import_obsidian3.Setting(containerEl).setName("Display footer").addToggle(
+    new import_obsidian4.Setting(containerEl).setName("Display footer").addToggle(
       (toggle) => toggle.setTooltip("Display footer").setValue(this.plugin.settings.displayFooter).onChange(async (value) => {
         this.plugin.settings.displayFooter = value;
         this.plugin.saveSettings();
       })
     );
-    new import_obsidian3.Setting(containerEl).setName("Print background").setDesc("Whether to print background graphics").addToggle(
+    new import_obsidian4.Setting(containerEl).setName("Print background").setDesc("Whether to print background graphics").addToggle(
       (toggle) => toggle.setValue(this.plugin.settings.printBackground).onChange(async (value) => {
         this.plugin.settings.printBackground = value;
         this.plugin.saveSettings();
       })
     );
-    new import_obsidian3.Setting(containerEl).setName("Generate tagged PDF").setDesc("Whether or not to generate a tagged (accessible) PDF. Defaults to false. As this property is experimental, the generated PDF may not adhere fully to PDF/UA and WCAG standards.").addToggle(
+    new import_obsidian4.Setting(containerEl).setName("Generate tagged PDF").setDesc("Whether or not to generate a tagged (accessible) PDF. Defaults to false. As this property is experimental, the generated PDF may not adhere fully to PDF/UA and WCAG standards.").addToggle(
       (toggle) => toggle.setValue(this.plugin.settings.generateTaggedPDF).onChange(async (value) => {
         this.plugin.settings.generateTaggedPDF = value;
         this.plugin.saveSettings();
       })
     );
-    new import_obsidian3.Setting(containerEl).setName("Max headings level of the outline").addDropdown((dropdown) => {
+    new import_obsidian4.Setting(containerEl).setName("Max headings level of the outline").addDropdown((dropdown) => {
       dropdown.addOptions(Object.fromEntries(["1", "2", "3", "4", "5", "6"].map((level) => [level, `h${level}`]))).setValue(this.plugin.settings.maxLevel).onChange(async (value) => {
         this.plugin.settings.maxLevel = value;
         this.plugin.saveSettings();
       });
     });
-    new import_obsidian3.Setting(containerEl).setName("PDF metadata").setDesc("Add frontMatter(title, author, keywords, subject creator, etc) to pdf metadata").addToggle(
+    new import_obsidian4.Setting(containerEl).setName("PDF metadata").setDesc("Add frontMatter(title, author, keywords, subject creator, etc) to pdf metadata").addToggle(
       (toggle) => toggle.setValue(this.plugin.settings.displayMetadata).onChange(async (value) => {
         this.plugin.settings.displayMetadata = value;
         this.plugin.saveSettings();
       })
     );
-    new import_obsidian3.Setting(containerEl).setName("Advanced").setHeading();
-    const headerContentAreaSetting = new import_obsidian3.Setting(containerEl);
+    new import_obsidian4.Setting(containerEl).setName("Advanced").setHeading();
+    const headerContentAreaSetting = new import_obsidian4.Setting(containerEl);
     headerContentAreaSetting.settingEl.setAttribute("style", "display: grid; grid-template-columns: 1fr;");
     headerContentAreaSetting.setName("Header Template").setDesc(
       'HTML template for the print header. Should be valid HTML markup with following classes used to inject printing values into them: date (formatted print date), title (document title), url (document location), pageNumber (current page number) and totalPages (total pages in the document). For example, <span class="title"></span> would generate span containing the title.'
     );
-    const hederContentArea = new import_obsidian3.TextAreaComponent(headerContentAreaSetting.controlEl);
+    const hederContentArea = new import_obsidian4.TextAreaComponent(headerContentAreaSetting.controlEl);
     setAttributes(hederContentArea.inputEl, {
       style: "margin-top: 12px; width: 100%; height: 6vh;"
     });
@@ -20800,10 +20918,10 @@ var ConfigSettingTab = class extends import_obsidian3.PluginSettingTab {
       this.plugin.settings.headerTemplate = value;
       this.plugin.saveSettings();
     });
-    const footerContentAreaSetting = new import_obsidian3.Setting(containerEl);
+    const footerContentAreaSetting = new import_obsidian4.Setting(containerEl);
     footerContentAreaSetting.settingEl.setAttribute("style", "display: grid; grid-template-columns: 1fr;");
     footerContentAreaSetting.setName("Footer Template").setDesc("HTML template for the print footer. Should use the same format as the headerTemplate.");
-    const footerContentArea = new import_obsidian3.TextAreaComponent(footerContentAreaSetting.controlEl);
+    const footerContentArea = new import_obsidian4.TextAreaComponent(footerContentAreaSetting.controlEl);
     setAttributes(footerContentArea.inputEl, {
       style: "margin-top: 12px; width: 100%; height: 6vh;"
     });
@@ -20811,8 +20929,8 @@ var ConfigSettingTab = class extends import_obsidian3.PluginSettingTab {
       this.plugin.settings.footerTemplate = value;
       this.plugin.saveSettings();
     });
-    new import_obsidian3.Setting(containerEl).setName("Debug").setHeading();
-    new import_obsidian3.Setting(containerEl).setName("Debug mode").setDesc("This is useful for troubleshooting.").addToggle((cb) => {
+    new import_obsidian4.Setting(containerEl).setName("Debug").setHeading();
+    new import_obsidian4.Setting(containerEl).setName("Debug mode").setDesc("This is useful for troubleshooting.").addToggle((cb) => {
       cb.setValue(this.plugin.settings.debug).onChange(async (value) => {
         this.plugin.settings.debug = value;
         await this.plugin.saveSettings();
@@ -20835,7 +20953,7 @@ var DEFAULT_SETTINGS = {
   displayMetadata: false,
   debug: false
 };
-var BetterExportPdfPlugin = class extends import_obsidian4.Plugin {
+var BetterExportPdfPlugin = class extends import_obsidian5.Plugin {
   async onload() {
     await this.loadSettings();
     this.registerCommand();
@@ -20848,7 +20966,7 @@ var BetterExportPdfPlugin = class extends import_obsidian4.Plugin {
       name: "Export current file to PDF",
       checkCallback: (checking) => {
         var _a;
-        const view = this.app.workspace.getActiveViewOfType(import_obsidian4.MarkdownView);
+        const view = this.app.workspace.getActiveViewOfType(import_obsidian5.MarkdownView);
         const file = view == null ? void 0 : view.file;
         if (!file) {
           return false;
@@ -20867,7 +20985,7 @@ var BetterExportPdfPlugin = class extends import_obsidian4.Plugin {
   registerEvents() {
     this.registerEvent(
       this.app.workspace.on("file-menu", (menu, file) => {
-        let title = file instanceof import_obsidian4.TFolder ? "Export folder to PDF" : "Better Export PDF";
+        let title = file instanceof import_obsidian5.TFolder ? "Export folder to PDF" : "Better Export PDF";
         if (isDev) {
           title = `${title} (dev)`;
         }

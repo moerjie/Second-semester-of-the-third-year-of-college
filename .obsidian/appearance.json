@@ -1,7 +1,4 @@
 {
   "accentColor": "",
-  "cssTheme": "Border",
-  "translucency": false,
-  "baseFontSizeAction": true,
-  "theme": "moonstone"
+  "cssTheme": "Border"
 }
