@@ -10,7 +10,9 @@
   "obsidian-image-auto-upload-plugin",
   "obsidian-completr",
   "better-export-pdf",
-  "obsidian-advanced-slides",
   "obsidian-admonition",
-  "obsidian-git"
+  "obsidian-git",
+  "table-editor-obsidian",
+  "obsidian-zoom",
+  "obsidian-file-color"
 ]
