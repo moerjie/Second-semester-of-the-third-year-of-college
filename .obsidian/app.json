@@ -1,5 +1,6 @@
 {
   "showLineNumber": true,
   "vimMode": false,
-  "autoConvertHtml": false
+  "autoConvertHtml": false,
+  "promptDelete": false
 }

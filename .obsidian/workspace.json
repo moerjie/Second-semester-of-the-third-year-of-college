@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "杂类/EDA第二次课.md",
+                "file": "天线/天线基础知识/1.5 天线阵的方向性.md",
                 "mode": "source",
                 "source": false
               }
@@ -64,24 +64,19 @@
               "type": "bookmarks",
               "state": {}
             }
-          }
-        ]
-      },
-      {
-        "id": "42f4a2ce18fb47e4",
-        "type": "tabs",
-        "children": [
+          },
           {
             "id": "7341cfa65f747af9",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "杂类/EDA第二次课.md"
+                "file": "天线/天线基础知识/1.5 天线阵的方向性.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -101,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "杂类/EDA第二次课.md",
+                "file": "天线/天线基础知识/1.5 天线阵的方向性.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "杂类/EDA第二次课.md",
+                "file": "天线/天线基础知识/1.5 天线阵的方向性.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -167,16 +162,25 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "remotely-save:Remotely Save": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-omnivore:Omnivore": false
     }
   },
-  "active": "4869d77e4bfb90c6",
+  "active": "7341cfa65f747af9",
   "lastOpenFiles": [
-    "杂类/发展评议会面试.md",
+    "README.md",
+    "Omnivore/2024-04-15/Getting Started with Omnivore.md",
+    "天线/天线基础知识/1.5 天线阵的方向性.md",
+    "Omnivore/2024-04-15/(4 封私信 - 10 条消息) 首页 - 知乎.md",
+    "Omnivore/2024-04-15/电赛中常用的电路模块分享.md",
+    "Omnivore/2024-04-15/The Secret Power of ‘Read It Later’ Apps.md",
+    "Omnivore/2024-04-15/Organize your Omnivore library with labels.md",
+    "Omnivore/2024-04-15",
+    "Omnivore",
     "杂类/EDA第二次课.md",
+    "杂类/发展评议会面试.md",
     "2-嵌入式客观题详解8-13届【耗不尽的先生】.pdf",
     "未命名.canvas",
-    "天线/天线基础知识/1.5 天线阵的方向性.md",
     "天线/天线基础知识/1.4 对称振子.md",
     "天线/天线基础知识/第一章.md",
     "天线/天线.md",
@@ -189,7 +193,6 @@
     "微波技术/传输线的基本理论/1.3-传输方程及其解.md",
     "tem.md",
     "Pasted image 20240404192835.png",
-    "README.md",
     "杂类",
     "天线/天线基础知识/基本振子的辐射.md",
     "天线/天线基础知识/发射天线的电参数.md",
@@ -201,14 +204,8 @@
     "天线",
     "LICENSE",
     "-/README.md",
-    "-/LICENSE",
-    "-",
     "Welcome.md",
     "create a link.md",
-    "天线/天线基础知识/天线基础知识.md",
-    "Notion/大三下/微波技术/微波技术.md",
-    "Notion/大三下/微波技术/绪论.md",
-    "Notion/大三下/大三下.md",
     "%E5%A4%B4%E5%83%8F.jpg",
     "%E6%96%B9%E5%BD%A2logo.jpg",
     "Untitled 20.png",
