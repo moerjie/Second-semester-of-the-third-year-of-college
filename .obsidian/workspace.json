@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "Omnivore/2024-04-15/电赛中常用的电路模块分享.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e36c581a54878a36",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "杂类/HFSS实验报告.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -64,7 +77,13 @@
               "type": "bookmarks",
               "state": {}
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "2df4b088fe0f1d2f",
+        "type": "tabs",
+        "children": [
           {
             "id": "7341cfa65f747af9",
             "type": "leaf",
@@ -79,7 +98,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "008e0a51a166a629",
@@ -145,7 +165,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -164,22 +185,24 @@
       "obsidian-omnivore:Omnivore": false
     }
   },
-  "active": "4869d77e4bfb90c6",
+  "active": "e36c581a54878a36",
   "lastOpenFiles": [
+    "Omnivore/2024-04-15/电赛中常用的电路模块分享.md",
+    "杂类/HFSS实验报告.md",
+    "杂类/EDA第二次课.md",
+    "杂类/发展评议会面试.md",
+    "Omnivore/2024-04-15/2023全国大学生电子设计竞赛H题全解 [原创www.cnblogs.com-helesheng] - helesheng - 博客园.md",
+    "README.md",
+    "大三下.md",
     "微波技术/传输线的基本理论/1.5接有负载的均匀无耗传输线.md",
     "微波技术/传输线的基本理论/1.6 阻抗匹配.md",
     "天线/天线基础知识/1.5 天线阵的方向性.md",
-    "Omnivore/2024-04-15/2023全国大学生电子设计竞赛H题全解 [原创www.cnblogs.com-helesheng] - helesheng - 博客园.md",
-    "README.md",
     "Omnivore/2024-04-15/Getting Started with Omnivore.md",
     "Omnivore/2024-04-15/(4 封私信 - 10 条消息) 首页 - 知乎.md",
-    "Omnivore/2024-04-15/电赛中常用的电路模块分享.md",
     "Omnivore/2024-04-15/The Secret Power of ‘Read It Later’ Apps.md",
     "Omnivore/2024-04-15/Organize your Omnivore library with labels.md",
     "Omnivore/2024-04-15",
     "Omnivore",
-    "杂类/EDA第二次课.md",
-    "杂类/发展评议会面试.md",
     "2-嵌入式客观题详解8-13届【耗不尽的先生】.pdf",
     "未命名.canvas",
     "天线/天线基础知识/1.4 对称振子.md",
@@ -195,7 +218,6 @@
     "杂类",
     "天线/天线基础知识/基本振子的辐射.md",
     "天线/天线基础知识/发射天线的电参数.md",
-    "大三下.md",
     "logo.png_256x256.ico",
     "微波技术/传输线的基本理论",
     "微波技术",
@@ -203,7 +225,6 @@
     "天线",
     "LICENSE",
     "-/README.md",
-    "Welcome.md",
     "%E5%A4%B4%E5%83%8F.jpg",
     "%E6%96%B9%E5%BD%A2logo.jpg",
     "Untitled 20.png",
