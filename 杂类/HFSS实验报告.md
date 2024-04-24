@@ -124,4 +124,29 @@
 2.   同建立模型3-直角弯头的步骤，对第一步建立好的同轴线进行旋转、切割、复制，即可得到带四氟支撑的直角弯头
 
 <img src="https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404191056636.png" alt="image-20240419105602546" style="zoom:67%;" />
+### 仿真结果分析
+#### 对内导体拐角处切割深度进行扫参
+![](https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404241921297.png)
+得到的结果如下图所示
+![](https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404241922091.png)
+回波损耗很大，对支撑柱的直径扫参同样回波损耗极大
+![](https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404241955955.png)
+将外部波导改为圆弧拐弯，但是回波损耗改善不大
+![](https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404241958463.png)
 
+## 5. 不带四氟支撑的 U_Link
+### 模型建立
+将模型 3-直角弯头复制到新建的hfss 文件下，然后使用工具栏中的mirror 功能
+![](https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404242010262.png)
+将直角弯头沿 x 轴对称过去，unite 后即可得到U_Link
+
+### 仿真结果分析
+![](https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404242015900.png)
+可以看出，当切割深度为 $27mm$ 时回波损耗满足要求，别的长度会有两个匹配的传输频率，但是带宽不够。因此，当需要传输频带较窄的信号时可以使用 $27mm$ 以外的切割深度，当传输宽带信号时使用 $27mm$ 
+## 6.带四氟支撑的 U_Link
+### 模型建立
+将模型 4 中的带四氟支撑的直角弯头复制到新建的工程中，然后mirror 后将新生成的内部波导和外部波导合并后即可得到带四氟支撑的 U_Link
+![|575](https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404242027493.png)
+### 仿真结果分析
+![](https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404242038370.png)
+可以看到此时的U_Link 有一定的频率选择功能，调节切割深度回波损耗几乎不变
