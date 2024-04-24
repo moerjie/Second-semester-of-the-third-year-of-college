@@ -1,7 +1,11 @@
 # HFSS结课作业报告
 
 报告要求同轴线的特性阻抗为$50\Omega$, 外导体直径为$96mm$,根据计算公式可以算出内导体直径为$29.54mm$
-
+计算公式如下
+$$
+Z_0=\frac{60}{\sqrt{\varepsilon_r}}\ln\frac{b}{a}\Omega
+$$
+其中 a 为内导体半径，b 为同轴线外导体半径
 ## 1.不带四氟支撑的同轴线
 
 ### 模型建立
@@ -122,19 +126,23 @@
 
 1.   利用建立模型2-带四氟支撑的同轴线的步骤建立一个直角弯头的壁，细脖子的半径为$8.5mm$，打孔的半径为$9mm$, 打孔圆心距离轴线中心的距离为$25mm$
 2.   同建立模型3-直角弯头的步骤，对第一步建立好的同轴线进行旋转、切割、复制，即可得到带四氟支撑的直角弯头
-
 <img src="https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404191056636.png" alt="image-20240419105602546" style="zoom:67%;" />
+
 ### 仿真结果分析
+
 #### 对内导体拐角处切割深度进行扫参
-![](https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404241921297.png)
+
+<img src="https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404241921297.png" alt="image-20240419105602546" style="zoom:67%;" />
 得到的结果如下图所示
-![](https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404241922091.png)
+<img src="https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404241922091.png" style="zoom:50%;" />
+
 回波损耗很大，对支撑柱的直径扫参同样回波损耗极大
-![](https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404241955955.png)
+<img src="https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404241955955.png" style="zoom: 50%;" />
 将外部波导改为圆弧拐弯，但是回波损耗改善不大
-![](https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404241958463.png)
+<img src="https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404241958463.png" style="zoom: 50%;" />
 
 ## 5. 不带四氟支撑的 U_Link
+
 ### 模型建立
 将模型 3-直角弯头复制到新建的hfss 文件下，然后使用工具栏中的mirror 功能
 ![](https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404242010262.png)
@@ -149,4 +157,4 @@
 ![|575](https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404242027493.png)
 ### 仿真结果分析
 ![](https://sawen-pic-blog.oss-cn-beijing.aliyuncs.com/pic/202404242038370.png)
-可以看到此时的U_Link 有一定的频率选择功能，调节切割深度回波损耗几乎不变
+可以看到此时的U_Link 有一定的频率选择功能，调节切割深度回波损耗几乎不变，因此只能传输 $0.2479MHz和0.7312MHz$ 的信号
