@@ -14973,6 +14973,9 @@ etfX
  倾
  jD
  的信号
+ adcb
+ Xilinx FPGA中RS编码IP核之Generator Start
+ 使用Reed
 STREAM协议
 STREAM简介
 Stream总线是一种高效
@@ -15719,6 +15722,7 @@ SRw
 Sfr
 ShS
 SkZ
+Solomon Encoder IP核自己生成的仿真程序
 slug
 stream传输的数据
 sI
@@ -27898,6 +27902,7 @@ CqW
 Caz
 CpAi
 CrH
+CSDN博客
 XWXm
 XC
 XB
@@ -32499,6 +32504,7 @@ xat
 xMSSKs
 xLI
 xqk
+xilinx rs编码ip核
 Kj
 Ky
 Ku
@@ -43973,3 +43979,4 @@ ObjStm
 烪X
 駞T
 调节切割深度回波损耗几乎不变
+仿真输出编码后的结果与matlab的rsenc函数不一致
