@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Omnivore/2024-05-01/使用Reed-Solomon Encoder IP核自己生成的仿真程序，仿真输出编码后的结果与matlab的rsenc函数不一致.md",
+                "file": "天线/天线基础知识/1.6 对称振子阵的阻抗特性.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Omnivore/2024-05-01/使用Reed-Solomon Encoder IP核自己生成的仿真程序，仿真输出编码后的结果与matlab的rsenc函数不一致.md"
+                "file": "天线/天线基础知识/1.6 对称振子阵的阻抗特性.md"
               }
             }
           }
@@ -85,7 +85,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "008e0a51a166a629",
@@ -101,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Omnivore/2024-05-01/使用Reed-Solomon Encoder IP核自己生成的仿真程序，仿真输出编码后的结果与matlab的rsenc函数不一致.md",
+                "file": "天线/天线基础知识/1.6 对称振子阵的阻抗特性.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Omnivore/2024-05-01/使用Reed-Solomon Encoder IP核自己生成的仿真程序，仿真输出编码后的结果与matlab的rsenc函数不一致.md",
+                "file": "天线/天线基础知识/1.6 对称振子阵的阻抗特性.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -173,25 +174,29 @@
   },
   "active": "4869d77e4bfb90c6",
   "lastOpenFiles": [
+    "天线/天线基础知识/第一章.md",
+    "天线/天线基础知识/1.6 对称振子阵的阻抗特性.md",
+    "天线/天线.md",
+    "Omnivore/2024-04-15/电赛中常用的电路模块分享.md",
+    "Omnivore/2024-04-15/2023全国大学生电子设计竞赛H题全解 [原创www.cnblogs.com-helesheng] - helesheng - 博客园.md",
+    "Omnivore/2024-04-24/【新提醒】编辑推荐：FPGA新人必看！ - FPGA-CPLD - 电子工程世界-论坛.md",
+    "Omnivore/2024-05-02/yilia设置分类和标签、设置随笔、设置归档_yilia文章分类-CSDN博客.md",
+    "Omnivore/2024-05-02",
+    "Omnivore/2024-05-01/使用Reed-Solomon Encoder IP核自己生成的仿真程序，仿真输出编码后的结果与matlab的rsenc函数不一致.md",
     "杂类/22_VV_张文杰_20240424.pdf",
     "杂类/22_VV_20240424.aedt",
     "杂类/22.pdf",
     "Omnivore/2024-05-01/Xilinx FPGA中RS编码IP核之Generator Start_xilinx rs编码ip核-CSDN博客.md",
     "杂类/HFSS实验报告.md",
-    "Omnivore/2024-05-01/使用Reed-Solomon Encoder IP核自己生成的仿真程序，仿真输出编码后的结果与matlab的rsenc函数不一致.md",
     "Omnivore/2024-05-01",
     "Omnivore/2024-04-24/基于system generator完成matlab与vivado的联合设计-CSDN博客.md",
-    "Omnivore/2024-04-24/【新提醒】编辑推荐：FPGA新人必看！ - FPGA-CPLD - 电子工程世界-论坛.md",
     "Omnivore/2024-04-24",
     "杂类/~WRL0001.tmp",
     "杂类/~WRD0000.tmp",
     "杂类/~$ Microsoft Word 文档.docx",
     "杂类/新建 Microsoft Word 文档.docx",
-    "Omnivore/2024-04-15/电赛中常用的电路模块分享.md",
-    "杂类/HFSS实验报告.pdf",
     "杂类/EDA第二次课.md",
     "杂类/发展评议会面试.md",
-    "Omnivore/2024-04-15/2023全国大学生电子设计竞赛H题全解 [原创www.cnblogs.com-helesheng] - helesheng - 博客园.md",
     "README.md",
     "大三下.md",
     "微波技术/传输线的基本理论/1.5接有负载的均匀无耗传输线.md",
@@ -201,15 +206,11 @@
     "Omnivore/2024-04-15/(4 封私信 - 10 条消息) 首页 - 知乎.md",
     "Omnivore/2024-04-15/The Secret Power of ‘Read It Later’ Apps.md",
     "Omnivore/2024-04-15/Organize your Omnivore library with labels.md",
-    "Omnivore/2024-04-15",
     "未命名.canvas",
     "天线/天线基础知识/1.4 对称振子.md",
-    "天线/天线基础知识/第一章.md",
-    "天线/天线.md",
     "微波技术/传输线的基本理论/传输线的基本理论.md",
     "微波技术/微波技术.md",
     "微波技术/传输线的基本理论/1-2.md",
-    "微波技术/绪论.md",
     "Pasted image 20240404192835.png",
     "%E5%A4%B4%E5%83%8F.jpg",
     "%E6%96%B9%E5%BD%A2logo.jpg",
