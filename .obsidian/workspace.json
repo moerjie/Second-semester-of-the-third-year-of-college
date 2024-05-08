@@ -13,8 +13,20 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "天线/天线基础知识/1.6 对称振子阵的阻抗特性.md",
+                "file": "微波技术/第七章-微波网络基本知识/微波网络基本知识.md",
                 "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "088b5f18f975dc9e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "微波技术/传输线的基本理论/1.5接有负载的均匀无耗传输线.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -77,7 +89,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "天线/天线基础知识/1.6 对称振子阵的阻抗特性.md"
+                "file": "微波技术/第七章-微波网络基本知识/微波网络基本知识.md"
               }
             }
           }
@@ -85,8 +97,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "008e0a51a166a629",
@@ -102,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "天线/天线基础知识/1.6 对称振子阵的阻抗特性.md",
+                "file": "微波技术/第七章-微波网络基本知识/微波网络基本知识.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "天线/天线基础知识/1.6 对称振子阵的阻抗特性.md",
+                "file": "微波技术/第七章-微波网络基本知识/微波网络基本知识.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,8 +185,21 @@
   },
   "active": "4869d77e4bfb90c6",
   "lastOpenFiles": [
-    "天线/天线基础知识/第一章.md",
+    "微波技术/传输线的基本理论/传输线的基本理论.md",
+    "微波技术/第七章-微波网络基本知识/微波网络基本知识.md",
+    "微波技术/第七章-微波网络基本知识",
     "天线/天线基础知识/1.6 对称振子阵的阻抗特性.md",
+    "杂类/~$ Microsoft Word 文档.docx",
+    "天线/天线基础知识/1.7 无限大理想导电反射面对天线电性能的影响.md",
+    "天线/天线基础知识/1.5 天线阵的方向性.md",
+    "微波技术/传输线的基本理论/1.5接有负载的均匀无耗传输线.md",
+    "杂类/Zin_cal.asv",
+    "Omnivore/2024-04-15/Getting Started with Omnivore.md",
+    "杂类/Zin_cal.m",
+    "微波技术/传输线的基本理论/1-2.md",
+    "天线/天线基础知识/第一章.md",
+    "天线/天线基础知识/基本振子的辐射.md",
+    "天线/天线基础知识/1.4 对称振子.md",
     "天线/天线.md",
     "Omnivore/2024-04-15/电赛中常用的电路模块分享.md",
     "Omnivore/2024-04-15/2023全国大学生电子设计竞赛H题全解 [原创www.cnblogs.com-helesheng] - helesheng - 博客园.md",
@@ -191,26 +215,13 @@
     "Omnivore/2024-05-01",
     "Omnivore/2024-04-24/基于system generator完成matlab与vivado的联合设计-CSDN博客.md",
     "Omnivore/2024-04-24",
-    "杂类/~WRL0001.tmp",
-    "杂类/~WRD0000.tmp",
-    "杂类/~$ Microsoft Word 文档.docx",
-    "杂类/新建 Microsoft Word 文档.docx",
     "杂类/EDA第二次课.md",
     "杂类/发展评议会面试.md",
     "README.md",
     "大三下.md",
-    "微波技术/传输线的基本理论/1.5接有负载的均匀无耗传输线.md",
     "微波技术/传输线的基本理论/1.6 阻抗匹配.md",
-    "天线/天线基础知识/1.5 天线阵的方向性.md",
-    "Omnivore/2024-04-15/Getting Started with Omnivore.md",
     "Omnivore/2024-04-15/(4 封私信 - 10 条消息) 首页 - 知乎.md",
-    "Omnivore/2024-04-15/The Secret Power of ‘Read It Later’ Apps.md",
-    "Omnivore/2024-04-15/Organize your Omnivore library with labels.md",
     "未命名.canvas",
-    "天线/天线基础知识/1.4 对称振子.md",
-    "微波技术/传输线的基本理论/传输线的基本理论.md",
-    "微波技术/微波技术.md",
-    "微波技术/传输线的基本理论/1-2.md",
     "Pasted image 20240404192835.png",
     "%E5%A4%B4%E5%83%8F.jpg",
     "%E6%96%B9%E5%BD%A2logo.jpg",

@@ -1,13 +1,14 @@
 {
   "showLineNumber": true,
   "vimMode": false,
-  "autoConvertHtml": false,
-  "promptDelete": false,
+  "autoConvertHtml": true,
+  "promptDelete": true,
   "alwaysUpdateLinks": true,
   "pdfExportSettings": {
     "pageSize": "A4",
     "landscape": false,
     "margin": "0",
     "downscalePercent": 100
-  }
+  },
+  "newFileLocation": "current"
 }
