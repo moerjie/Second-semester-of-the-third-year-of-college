@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Omnivore/2024-05-10/Cadence SPB 22.1 下载及安装，包含学习版安装 - 知乎.md",
+                "file": "微波技术/第七章-微波网络基本知识/7.1 概论.md",
                 "mode": "source",
                 "source": false
               }
@@ -89,7 +89,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Omnivore/2024-05-10/Cadence SPB 22.1 下载及安装，包含学习版安装 - 知乎.md"
+                "file": "微波技术/第七章-微波网络基本知识/7.1 概论.md"
               }
             }
           }
@@ -97,7 +97,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "008e0a51a166a629",
@@ -113,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Omnivore/2024-05-10/Cadence SPB 22.1 下载及安装，包含学习版安装 - 知乎.md",
+                "file": "微波技术/第七章-微波网络基本知识/7.1 概论.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Omnivore/2024-05-10/Cadence SPB 22.1 下载及安装，包含学习版安装 - 知乎.md",
+                "file": "微波技术/第七章-微波网络基本知识/7.1 概论.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,6 +187,10 @@
   "active": "4869d77e4bfb90c6",
   "lastOpenFiles": [
     "微波技术/第七章-微波网络基本知识/微波网络基本知识.md",
+    "微波技术/第七章-微波网络基本知识/7.1 概论.md",
+    "微波技术/传输线的基本理论/1.5接有负载的均匀无耗传输线.md",
+    "Omnivore/2024-05-16/How to Install Neovim on Ubuntu 24.04, 22.04 or 20.04 - LinuxCapable.md",
+    "Omnivore/2024-05-16",
     "Omnivore/2024-05-10/Cadence SPB 22.1 下载及安装，包含学习版安装 - 知乎.md",
     "Omnivore/2024-05-10",
     "微波技术/传输线的基本理论/传输线的基本理论.md",
@@ -194,7 +199,6 @@
     "杂类/~$ Microsoft Word 文档.docx",
     "天线/天线基础知识/1.7 无限大理想导电反射面对天线电性能的影响.md",
     "天线/天线基础知识/1.5 天线阵的方向性.md",
-    "微波技术/传输线的基本理论/1.5接有负载的均匀无耗传输线.md",
     "杂类/Zin_cal.asv",
     "Omnivore/2024-04-15/Getting Started with Omnivore.md",
     "杂类/Zin_cal.m",
@@ -214,13 +218,10 @@
     "杂类/22.pdf",
     "Omnivore/2024-05-01/Xilinx FPGA中RS编码IP核之Generator Start_xilinx rs编码ip核-CSDN博客.md",
     "杂类/HFSS实验报告.md",
-    "Omnivore/2024-05-01",
     "Omnivore/2024-04-24/基于system generator完成matlab与vivado的联合设计-CSDN博客.md",
     "杂类/EDA第二次课.md",
     "杂类/发展评议会面试.md",
     "README.md",
-    "大三下.md",
-    "微波技术/传输线的基本理论/1.6 阻抗匹配.md",
     "未命名.canvas",
     "Pasted image 20240404192835.png",
     "%E5%A4%B4%E5%83%8F.jpg",
